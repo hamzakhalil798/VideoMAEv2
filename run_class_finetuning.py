@@ -466,7 +466,7 @@ def main(args, ds_init):
 
     data_loader_train = torch.utils.data.DataLoader(
         dataset_train,
-        sampler=sampler_train,
+        sampler=None,
         batch_size=args.batch_size,
         num_workers=args.num_workers,
         pin_memory=args.pin_mem,
@@ -477,7 +477,7 @@ def main(args, ds_init):
     if dataset_val is not None:
         data_loader_val = torch.utils.data.DataLoader(
             dataset_val,
-            sampler=sampler_val,
+            sampler=None,
             batch_size=int(1.5 * args.batch_size),
             num_workers=args.num_workers,
             pin_memory=args.pin_mem,
@@ -489,7 +489,7 @@ def main(args, ds_init):
     if dataset_test is not None:
         data_loader_test = torch.utils.data.DataLoader(
             dataset_test,
-            sampler=sampler_test,
+            sampler=None,
             batch_size=args.batch_size,
             num_workers=args.num_workers,
             pin_memory=args.pin_mem,
